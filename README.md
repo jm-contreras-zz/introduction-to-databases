@@ -1,4 +1,5 @@
 introduction-to-databases
 =========================
+**Repository of SQL code that I wrote for the [Stanford Online](http://online.stanford.edu/) course [Introduction to Databases](https://class.stanford.edu/courses/Engineering/db/2014_1/about).**
 
-SQL scripts for online course
+- ***movie_schema_data.sql*** creates the Movie, Reviewer, and Rating tables that are used in ***movie_exercises.sql***.
