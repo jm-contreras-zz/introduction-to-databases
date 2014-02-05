@@ -16,19 +16,19 @@ ORDER BY b.ratingSpread DESC, a.title
    for movies before 1980 and movies after. Don't just calculate the overall average rating before and after 1980.) */
 
 SELECT (SELECT AVG(avgStars) AS avgStarsPrior80
-          FROM (SELECT mID, AVG(stars) AS avgStars
-                  FROM Rating
-                 WHERE mID IN (SELECT mID
-                                 FROM Movie
-                                WHERE year < 1980)
-              GROUP BY mID)) -
+          FROM (  SELECT mID, AVG(stars) AS avgStars
+                    FROM Rating
+                   WHERE mID IN (SELECT mID
+                                   FROM Movie
+                                  WHERE year < 1980)
+                GROUP BY mID)) -
        (SELECT AVG(avgStars) AS avgStarsAfter80
-          FROM (SELECT mID, AVG(stars) AS avgStars
-                  FROM Rating
-                 WHERE mID IN (SELECT mID
-                                 FROM Movie
-                                WHERE year > 1980)
-              GROUP BY mID))
+          FROM (  SELECT mID, AVG(stars) AS avgStars
+                    FROM Rating
+                   WHERE mID IN (SELECT mID
+                                   FROM Movie
+                                  WHERE year > 1980)
+                GROUP BY mID))
 
 /* Question 3
    Some directors directed more than one movie. For all such directors, return the titles of all movies directed by
