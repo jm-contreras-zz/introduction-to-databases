@@ -20,7 +20,7 @@ SELECT (SELECT AVG(avgStars) AS avgStarsPrior80
                   FROM Rating
                  WHERE mID IN (SELECT mID
                                  FROM Movie
-                                 WHERE year < 1980)
+                                WHERE year < 1980)
               GROUP BY mID)) -
        (SELECT AVG(avgStars) AS avgStarsAfter80
           FROM (SELECT mID, AVG(stars) AS avgStars
