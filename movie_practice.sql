@@ -49,7 +49,20 @@ SELECT title
    reviewers. Eliminate duplicates, don't pair reviewers with themselves, and include each pair only once. For each pair, 
    return the names in the pair in alphabetical order. */
 
-
+  SELECT c.name, d.name
+    FROM Rating AS a
+    JOIN Rating AS b
+      ON a.mID = b.mID
+    JOIN Reviewer AS c
+      ON a.rID = c.rID
+    JOIN Reviewer AS d
+      ON b.rID = d.rID
+   WHERE a.mID = b.mID AND a.rID != b.rID AND ((SELECT name
+                                                  FROM Reviewer
+                                                 WHERE a.rID = rID) < (SELECT name
+                                                                         FROM Reviewer 
+                                                                        WHERE b.rID = rID))
+GROUP BY c.name
 
 /* Question 6
    For each rating that is the lowest (fewest stars) currently in the database, return the reviewer name, movie title, and
