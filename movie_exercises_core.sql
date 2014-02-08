@@ -51,8 +51,24 @@ For all cases where the same reviewer rated the same movie twice and gave it a h
 /* Question 7
 For each movie that has at least one rating, find the highest number of stars that movie received. Return the movie title and number of stars. Sort by movie title. */
 
+  SELECT a.title, b.maxStars
+    FROM Movie AS a
+    JOIN (  SELECT mID, MAX(stars) AS maxStars
+              FROM Rating
+          GROUP BY mID) AS b
+      ON a.mID = b.mID
+ORDER BY a.title
+
 /* Question 8
 List movie titles and average ratings, from highest-rated to lowest-rated. If two or more movies have the same average rating, list them in alphabetical order. */
+
+  SELECT a.title, b.avgStars
+    FROM Movie AS a
+    JOIN (  SELECT mID, AVG(stars) AS avgStars
+              FROM Rating
+          GROUP BY mID) AS b
+      ON a.mID = b.mID
+ORDER BY b.avgStars DESC, a.title
 
 /* Question 9
 Find the names of all reviewers who have contributed three or more ratings. */
