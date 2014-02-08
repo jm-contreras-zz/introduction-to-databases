@@ -51,7 +51,7 @@ For all cases where the same reviewer rated the same movie twice and gave it a h
 /* Question 7
 For each movie that has at least one rating, find the highest number of stars that movie received. Return the movie title and number of stars. Sort by movie title. */
 
-  SELECT a.title, b.maxStars
+  SELECT a.title,b.maxStars
     FROM Movie AS a
     JOIN (  SELECT mID, MAX(stars) AS maxStars
               FROM Rating
