@@ -17,7 +17,13 @@ INSERT INTO Rating
    For all movies that have an average rating of 4 stars or higher, add 25 to the release year. (Update the existing
    tuples; don't insert new tuples.) */
 
-
+UPDATE Movie
+   SET year = year + 25
+ WHERE mID IN (SELECT mID
+                 FROM (  SELECT mID, AVG(stars) AS avgStars
+                           FROM Rating
+                       GROUP BY mID)
+                WHERE avgStars >= 4)
 
 /* Question 4
    Remove all ratings where the movie's year is before 1970 or after 2000, and the rating is fewer than 4 stars. */
