@@ -51,6 +51,16 @@ ORDER BY name, title, stars
    For all cases where the same reviewer rated the same movie twice and gave it a higher rating the second time, return 
    the reviewer's name and the title of the movie. */
 
+SELECT name, title
+  FROM Rating AS a
+  JOIN Rating AS b
+    ON (a.mID = b.mID) AND (a.rID = b.rID)
+  JOIN Movie AS c
+    ON (a.mID = c.mID)
+  JOIN Reviewer AS d
+    ON (a.rID = d.rID)
+ WHERE a.ratingDate > b.ratingDate AND a.stars > b.stars
+
 /* Question 7
    For each movie that has at least one rating, find the highest number of stars that movie received. Return the movie 
    title and number of stars. Sort by movie title. */
