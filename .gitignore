@@ -1,5 +1,1 @@
-# History files
-.sql
-
-# Example code in package build process
-*-Ex.sql
+*.zip
