@@ -1,6 +1,6 @@
 introduction-to-databases
 =========================
-**Repository of SQL code that I wrote for the Stanford Online course [Introduction to Databases](https://class.stanford.edu/courses/Engineering/db/2014_1/about).**
+**Repository of SQL code that I wrote for the Stanford Online course [Introduction to Databases](https://class.stanford.edu/courses/Engineering/db/2014_1/about), a course that covers database design and the use of database management systems for applications.**
 
 - **movie_schema_data.sql** creates three tables: Movie, Reviewer, and Rating.
 
