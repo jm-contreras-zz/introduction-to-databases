@@ -4,4 +4,4 @@ introduction-to-databases
 
 - **movie_schema_data.sql** creates three tables: Movie, Reviewer, and Rating.
 
-- **movie_core.sql**, **movie_challenge.sql**, **movie_practice.sql**, and **movie_modification.sql** performa a variety of queries on the tables that **movie_schema_data.sql** creates.
+- **movie_core.sql**, **movie_challenge.sql**, **movie_practice.sql**, and **movie_modification.sql** perform a variety of queries on the tables that **movie_schema_data.sql** creates.
