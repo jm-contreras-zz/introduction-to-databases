@@ -1,6 +1,5 @@
 
 
-
   SELECT Name, Grade
     FROM Highschooler
    WHERE ID NOT IN (SELECT ID1
@@ -38,3 +37,17 @@ SELECT COUNT(DISTINCT(a.ID1)) + COUNT(DISTINCT(b.ID2)) - 1
  WHERE a.ID1 = b.ID1 AND a.ID2 = (SELECT ID
                                     FROM Highschooler
                                    WHERE Name = 'Cassandra')
+
+
+
+
+SELECT Name, Grade
+  FROM (  SELECT ID1, COUNT(*) AS n_friend
+            FROM Friend
+        GROUP BY ID1) AS a
+  JOIN Highschooler AS b
+    ON a.ID1 = b.ID
+ WHERE n_friend = (SELECT MAX(c.n_friend)
+                     FROM (  SELECT ID1, COUNT(*) AS n_friend
+                               FROM Friend
+						   GROUP BY ID1) c)
