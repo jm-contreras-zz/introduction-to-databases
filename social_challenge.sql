@@ -53,4 +53,4 @@ SELECT Name, Grade
  WHERE n_friend = (SELECT MAX(c.n_friend)
                      FROM (  SELECT ID1, COUNT(*) AS n_friend
                                FROM Friend
-						   GROUP BY ID1) c)
+                           GROUP BY ID1) c)
