@@ -29,8 +29,8 @@ SELECT c.Name, c.Grade, d.Name, d.Grade
   SELECT Name, Grade
     FROM Highschooler
    WHERE ID NOT IN (SELECT ID1 
-	  			      FROM Friend, Highschooler AS b, Highschooler AS c
-			         WHERE ID1 = b.ID AND ID2 = c.ID AND b.grade != c.grade)
+                      FROM Friend, Highschooler AS b, Highschooler AS c
+                     WHERE ID1 = b.ID AND ID2 = c.ID AND b.grade != c.grade)
 ORDER BY Grade, Name
 
 /* Question 5 
@@ -40,6 +40,6 @@ SELECT Name, Grade
   FROM Highschooler
  WHERE ID in (SELECT a.ID2
 				FROM (  SELECT ID2, COUNT(ID2) AS count
-						  FROM Likes
-					  GROUP BY ID2) AS a
-			   WHERE a.count > 1)k
+                          FROM Likes
+                      GROUP BY ID2) AS a
+               WHERE a.count > 1)
