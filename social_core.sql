@@ -42,4 +42,4 @@ SELECT Name, Grade
 				FROM (  SELECT ID2, COUNT(ID2) AS count
 						  FROM Likes
 					  GROUP BY ID2) AS a
-			   WHERE a.count > 1)
+			   WHERE a.count > 1)k
