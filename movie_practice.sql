@@ -1,5 +1,5 @@
 /* Question 1
-  Find the names of all reviewers who rated Gone with the Wind. */
+   Find the names of all reviewers who rated Gone with the Wind. */
 
 SELECT name
   FROM Reviewer
@@ -11,8 +11,8 @@ SELECT name
                        WHERE title = 'Gone with the Wind'))
 
 /* Question 2
-  For any rating where the reviewer is the same as the director of the movie, return the reviewer name, movie title, and
-  number of stars. */
+   For any rating where the reviewer is the same as the director of the movie, return the reviewer name, movie title, and
+   number of stars. */
 
 SELECT a.name, c.title, b.stars
   FROM Reviewer AS a
