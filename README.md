@@ -8,4 +8,4 @@ introduction-to-databases
 
 - **social_schema_data.sql** creates three tables: *Highschooler*, *Friend*, and *Likes*.
 
-**social_core.sql**, **social_challenge.sql**, **social_practice.sql**, and **social_modification.sql** perform a variety of queries on the tables that **social_schema_data.sql** creates.
+- **social_core.sql**, **social_challenge.sql**, **social_practice.sql**, and **social_modification.sql** perform a variety of queries on the tables that **social_schema_data.sql** creates.
