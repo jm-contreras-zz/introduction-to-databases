@@ -7,3 +7,5 @@ introduction-to-databases
 - **movie_core.sql**, **movie_challenge.sql**, **movie_practice.sql**, and **movie_modification.sql** perform a variety of queries on the tables that **movie_schema_data.sql** creates.
 
 - **social_schema_data.sql** creates three tables: *Highschooler*, *Friend*, and *Likes*.
+
+**social_core.sql**, **social_challenge.sql**, **social_practice.sql**, and **social_modification.sql** perform a variety of queries on the tables that **social_schema_data.sql** creates.
