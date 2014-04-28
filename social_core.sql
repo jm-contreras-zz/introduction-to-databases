@@ -39,7 +39,7 @@ ORDER BY Grade, Name
 SELECT Name, Grade
   FROM Highschooler
  WHERE ID in (SELECT a.ID2
-				FROM (  SELECT ID2, COUNT(ID2) AS count
+                FROM (  SELECT ID2, COUNT(ID2) AS count
                           FROM Likes
                       GROUP BY ID2) AS a
                WHERE a.count > 1)
