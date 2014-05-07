@@ -15,7 +15,8 @@ DELETE FROM Likes
                                                              WHERE Likes.ID2 = b.ID1)
                                                              
 /* Question 3
-   For all cases where A is friends with B, and B is friends with C, add a new friendship for the pair A and C. Do not add    duplicate friendships, friendships that already exist, or friendships with oneself. */
+   For all cases where A is friends with B, and B is friends with C, add a new friendship for the pair A and C. Do not add
+   duplicate friendships, friendships that already exist, or friendships with oneself. */
 
 INSERT INTO Friend
      SELECT f1.ID1, f2.ID2
