@@ -27,7 +27,7 @@ SELECT c.Name, c.Grade, d.Name, d.Grade
 
 /* Question 4
    Find names and grades of students who only have friends in the same grade. Return the result sorted by grade, then by
-   name within each grade.  */
+   name within each grade. */
 
   SELECT Name, Grade
     FROM Highschooler
