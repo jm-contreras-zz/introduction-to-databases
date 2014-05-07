@@ -1,5 +1,6 @@
 /* Question 1
-   Find all students who do not appear in the Likes table (as a student who likes or is liked) and return their names      and grades. Sort by grade, then by name within each grade. */
+   Find all students who do not appear in the Likes table (as a student who likes or is liked) and return their names and
+   grades. Sort by grade, then by name within each grade. */
    
   SELECT Name, Grade
     FROM Highschooler
@@ -9,7 +10,8 @@
 ORDER BY Grade, Name
 
 /* Question 2
-   For each student A who likes a student B where the two are not friends, find if they have a friend C in common (who     can introduce them!). For all such trios, return the name and grade of A, B, and C. */
+   For each student A who likes a student B where the two are not friends, find if they have a friend C in common (who can
+   introduce them!). For all such trios, return the name and grade of A, B, and C. */
 
 SELECT d.Name, d.Grade, e.Name, e.Grade, f.Name, f.Grade
   FROM Likes AS a, Friend AS b, Friend AS c, Highschooler AS d, Highschooler AS e, Highschooler AS f
@@ -33,7 +35,8 @@ SELECT AVG(n_friend)
         GROUP BY ID1)
 
 /* Question 5
-   Find the number of students who are either friends with Cassandra or are friends of friends of Cassandra. Do not        count Cassandra, even though technically she is a friend of a friend. */
+   Find the number of students who are either friends with Cassandra or are friends of friends of Cassandra. Do not count
+   Cassandra, even though technically she is a friend of a friend. */
 
 SELECT COUNT(DISTINCT(a.ID1)) + COUNT(DISTINCT(b.ID2)) - 1
   FROM Friend AS a, Friend AS b
